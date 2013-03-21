@@ -128,7 +128,7 @@ h3{
 #logo{
 	display: inline-block; 
 	background: url(../images/logo.png) 0 0 no-repeat; 
-	width: 261px; 
+	width: 190px; 
 	height: 96px; 
 	text-indent: -9999px; 
 }
@@ -177,7 +177,7 @@ h3{
 	position: relative;
 	height: 60px;
 	overflow: hidden;
-	margin: 30px 4px 0 51px;
+	margin: 30px 4px 0 31px;
 }
 #menu > li > a:hover{
 	text-decoration: none;
@@ -196,12 +196,12 @@ h3{
 	background: url(../images/arrow.png) 0 0 no-repeat;
 }
 .submenu_1{
-	font: 24px/24px 'Six Caps', sans-serif;
+	font:12px/1.2em 'Playball', cursive; 
 	position: absolute; 
 	z-index: 2; 
-	top: 93px; 
+	top: 73px; 
 	left: 44px;     
-	background: #020713;  
+  background: url(../images/sub_menu.png) repeat 0% 0%;
 	width: 86px;
 	padding: 0 0 0px;
 }
@@ -213,8 +213,8 @@ h3{
 .submenu_1 li{
 	position: relative; 
 	display: block;  
-	float: right;  
-	margin: 0 14px 1px 0;
+	float: left; 
+	margin: 10px 14px 1px 0;
 }
 .submenu_1 a{ 
 	letter-spacing: -1px;
@@ -222,22 +222,22 @@ h3{
 	display: inline-block; 
 	word-spacing: 3px;
 	text-transform: uppercase;  
-	text-align: right;
+	text-align: left;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
-	padding: 0 12px 0 0;
+	padding: 0 0 0 0;
 }
 .submenu_1 li:hover > a, .submenu_1 li.sfHover > a{
 	text-decoration: none; 
 	color: #ed2f53;
 }
 .submenu_1 .marTop{
-	margin-top: 22px;
+	margin-top: 12px;
 }
 .submenu_1 .marBot{
-	margin-bottom: 13px;
+	margin-bottom: 12px;
 }
 .submenu_2{
 	position:absolute; 
