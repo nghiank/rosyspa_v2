@@ -7,7 +7,7 @@
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 body{
 	font: 14px/20px Arial, Helvetica, sans-serif;
@@ -200,7 +200,7 @@ h3{
 	position: absolute; 
 	z-index: 2; 
 	top: 73px; 
-	left: 44px;     
+	left: 21px;     
   background: url(../images/sub_menu.png) repeat 0% 0%;
 	width: 86px;
 	padding: 0 0 0px;
@@ -228,6 +228,7 @@ h3{
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 	padding: 0 0 0 0;
+  margin-left: 10px;
 }
 .submenu_1 li:hover > a, .submenu_1 li.sfHover > a{
 	text-decoration: none; 
@@ -513,6 +514,12 @@ h3{
 	display: inline-block;
 	margin: 5px 0 0;
 	background: url(../images/line_vert.png) 199px 0 repeat-y;
+}
+.bg_product_border{
+	position: relative;
+	display: inline-block;
+	margin: 5px 0 0;
+	background: url(../images/line_vert.png) 300px 0 repeat-y;
 }
 .bg_3{
 	background: url(../images/line_vert.png) 420px 0 repeat-y;
@@ -821,3 +828,25 @@ footer p{
 	margin-left: 4px;
 }
 /*----*/
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background:rgba(255, 53, 91, 0.4);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255,0,0,0.4);
+}

@@ -1,5 +1,5 @@
 $(window).load(function(){
-	var mapUrl = "http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brooklyn,+New+York,+NY,+United+States&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=61.282355,146.513672&amp;ie=UTF8&amp;hq=&amp;hnear=Brooklyn,+Kings,+New+York&amp;ll=40.649974,-73.950005&amp;spn=0.01628,0.025663&amp;z=14&amp;iwloc=A&amp;output=embed",
+	var mapUrl = "http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=381+S%C6%B0+V%E1%BA%A1n+H%E1%BA%A1nh,+P.12,+Q.10&amp;aq=0&amp;sll=14.689881,103.095703&amp;sspn=46.918742,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=381+S%C6%B0+V%E1%BA%A1n+H%E1%BA%A1nh,+12,+Ho+Chi+Minh+City,+Vietnam&amp;ll=10.772034,106.669419&amp;spn=0.002988,0.005284&amp;z=17&amp;iwloc=A&amp;output=embed",
  		onLoadWebSite = false,
    		googleMapHolder = $(".google_map"),
         backgroundColor = googleMapHolder.css("backgroundColor"),

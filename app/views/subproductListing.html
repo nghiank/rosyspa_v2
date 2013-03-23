@@ -1,0 +1,15 @@
+<h3><%= catName %></h3>
+<% for(var i = 0; i < allSubItems.length; ++i ){ %>
+  <div class="grid_7 alpha omega">
+    <div class="grid_2 alpha omega">
+      <img style='width:50px; height:144px;' src="<%= allSubItems[i].thumbnail %>" alt="">
+    </div>
+    <div class="grid_4 omega">
+      <p class="marg_3"><a href='#' class='button'><%= allSubItems[i].product_name %></a><br> <%= allSubItems[i].usage%> </p>
+    </div>
+  </div>
+  <% if (i != allSubItems.length - 1) { %> 
+    <div class="line_hor"></div>
+  <% } %>
+<% }; %>
+

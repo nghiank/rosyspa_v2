@@ -25,8 +25,8 @@
 			}			
 		 	function init(){
 				srcItem = imgItem.attr("src");
-				widthItem = imgItem.width();
-				heightItem = imgItem.height();
+				widthItem = imgItem.width() || 27;
+				heightItem = imgItem.height() || 54;
 				imgItem.remove();
 				item.css({width:(widthItem), height:(heightItem/2),"display": "inline-block"});
 				item.append("<div class='outIcon' style='position:absolute; display:block; width:"+widthItem+"px; height:"+(heightItem/2)+"px; background:transparent url("+srcItem+") no-repeat;'></div>");

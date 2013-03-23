@@ -1,0 +1,17 @@
+<div class="container_16">
+  <div class="grid_16" id='productview'>
+      <div class="grid_7 bg_product_border"> 
+          <h2> Dòng sản phẩm </h2>
+          <ul class='list_1'>
+            <% for(var i = 0; i < allItems.length; ++i) { %>
+            <li>
+            <a href='#' id="catid<%= allItems[i].id %>">
+              <%= allItems[i].category_name %>
+            </a>
+            </li>
+            <% }; %>
+          </ul>
+      </div>
+      <div class="grid_8" style='overflow-y:auto;overflow-x:hidden; height: 600px;' id="subproduct"/>
+    </div>
+</div>

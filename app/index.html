@@ -15,8 +15,11 @@
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
   <script src="js/jquery-1.7.1.js"></script>
   <script src="js/scripts.js"></script>
+  <script src="js/GoogleSpreadsheet.js"> </script>
+  <script src="js/TimelineJS/compiled/js/storyjs-embed.js"></script>
+
+  <script src="js/lib/underscore.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/TimelineJs/
   <!--[if lt IE 9]>
   	<script type="text/javascript" src="js/html5.js"></script>
 	<link rel="stylesheet" href="css/ie.css" media="all">
@@ -136,10 +139,15 @@
 							<li id="page_home" class="no_disp"></li>
               <li id="page_welcomenote">
                 <div class="container_16">
-									<div class="grid_16 pad_2 bg_1">
+									<div class="grid_16">
 											<article>
-												<h2>Gioi thieu</h2>
-												<p class="pad_1">Koleacene anritma hasesera deyulety. Cumrsocis natoqu eagnis distmtese dulmuese feugiata lecenas stricies phase ledatyfena nec sit amm easer erment. Utdolor dapegetel ementum. Avelursu eleifend elinea nctor wisiet. Integer rutrum ante eu lacus. </p>
+												<h2>Giới thiệu</h2>
+                        Xuất phát từ mong muốn được chăm sóc một cách hoàn hảo nhất cho làn da để duy trì sự trẻ trung, khỏe mạnh, đủ sức  trống trọi với thời gian, môi trường và những lo toan trong cuộc sống, BeRosy Spa được sinh ra với sứ mệnh giúp cho chị em phụ nữ có một làn da tươi tắn hồng hào như cánh hoa hồng, luôn rạng ngời và tràn đầy sức sống biểu hiện cho sự viên mãn và hứa hẹn một triển vọng tốt đẹp đang chờ đón - đó cũng chính là ý nghĩa của cái tên “BeRosy”.<br> <br>
+                        Trong suốt hơn 20 năm qua, Dermalogica với trọng tâm là tìm kiếm sản phẩm giúp cho làn da khỏe mạnh đã chứng minh một quan điểm đúng đắn. Với sự có mặt tại thị trường Việt Nam hơn 12 năm, thương hiệu này đã trở thành một trong số ít các thương hiệu mỹ phẩm được ưa chuộng nhất tại Việt Nam.<br> <br>
+                        Sử dụng mỹ phẩm Dermalogica, kết hợp với chương trình chăm sóc da chuyên nghiệp, thêm vào đó là tấm lòng nhiệt huyết và bàn tay khéo léo của các chuyên viên BeRosy, chúng tôi tin tưởng rằng các bạn nhất định sẽ “be rosy”.<br><br>
+                        Hãy đến với  BeRosy để được trải nghiệm, được chăm sóc và hãy cho chúng tôi biết bạn có hài lòng không? Mục tiêu vươn tới của BeRosy chính là câu trả lời “Có” của các bạn. Hãy là những người bạn thân thiết của BeRosy nhé!<br><br>
+Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
+												<p class="pad_1"></p>
 											</article>
                   </div>
                 </div>
@@ -203,44 +211,10 @@
 								</div>
 							</li> 
 							<li id="page_product">
-								<div class="container_16">
-									<div class="grid_16 prefix_1 pad_2">
-										<h2>San pham</h2>
-										<div class="marg_6">
-											<div class="box_02 marg_5">
-												<img src="images/page3_pic1.jpg" alt="">
-												<a href="#!/page_more">classic manicure</a>
-												<p>San pham 1</p>
-											</div>
-											<div class="box_02 marg_5">
-												<img src="images/page3_pic2.jpg" alt="">
-												<a href="#!/page_more">hot stone manicure</a>
-												<p>San pham 2</p>
-											</div>
-											<div class="box_02">
-												<img src="images/page3_pic3.jpg" alt="">
-												<a href="#!/page_more">spa pedicure</a>
-												<p>San pham 4</p>
-											</div>
-										</div>
-										<div class="marg_6">
-											<div class="box_02 marg_5">
-												<img src="images/page3_pic1.jpg" alt="">
-												<a href="#!/page_more">classic manicure</a>
-												<p>San pham 5</p>
-											</div>
-											<div class="box_02 marg_5">
-												<img src="images/page3_pic2.jpg" alt="">
-												<a href="#!/page_more">hot stone manicure</a>
-												<p>San pham 6</p>
-											</div>
-											<div class="box_02">
-												<img src="images/page3_pic3.jpg" alt="">
-												<a href="#!/page_more">spa pedicure</a>
-												<p>San pham 7</p>
-											</div>
-										</div>
-									</div>
+                <div class="container_16">
+                  <div class="grid_16 prefix_1 pad_2" ng-app="productApp">
+                      <div ng-view></div>
+                  </div>
 								</div>
 							</li>
 
@@ -338,28 +312,26 @@
               <li id="page_career">
                 <div class="container_16">
 									<div class="grid_16 prefix_1 pad_2 bg_3">
-<p> Tuyen dung </p>
+    <p> Tuyen dung </p>
                   </div>
                 </div>
               </li>
               <li id="page_promotion">
-                <div class="container_16">
-									<div class="grid_16 prefix_1 pad_2 bg_3">
-                    <p>Promition </p>
-                  </div>
+                <div style='width: 100%; height: 500px;'>
+                    <div id='timeline'></div>
                 </div>
               </li>
 							<li id="page_contact">
 								<div class="container_16">
 									<div class="grid_16 prefix_1 pad_2 bg_3">
 										<div class="grid_6 alpha">
-											<h2>Postal Address</h2>
-											<div class="google_map"></div>
+											<h2>Địa Chỉ</h2>
+                      <div class='google_map' ></div>
 											<div class="con_info">
-												<h3>8901 Marmora Road, Glasgow, D04 89GR.</h3>
-												<span>Telephone:</span> +1 959 603 6035<br>
-												<span>FAX:</span> +1 504 889 9898<br>
-												E-mail: <a class="mailLink" href="mailto:">mail@demolink.org</a>
+												<h3>381 Sư Vạn Hạnh (nối dài), P.12, Q.10, Hồ Chí Minh</h3>
+												<span>Telephone:</span> +84-8-38620246<br>
+												<span>Movile:</span> 0913595927<br>
+												E-mail: <a class="mailLink" href="mailto:">spa@berosy.vn</a>
 											</div>
 										</div>
 										<div class="grid_8 prefix_1">
@@ -446,26 +418,24 @@
 					<!--content end-->
 			</div>
 		</div> 
-        <!--footer -->
-            <footer>
+      <footer>
                <div class="container_16">
-					<div class="grid_16 text_center">
-						<div class="footer_info">
-							<p>NailSpa &copy; 2013  |  <a class="link_1" href="#!/page_privacy">Privacy policy</a>&nbsp;<!-- {%FOOTER_LINK} --></p>
-							<ul class="follow-icon">
-								<li><a href="#"><img src="images/social_icon_1.png" alt="" class="img_icon"></a></li>
-								<li><a href="#"><img src="images/social_icon_2.png" alt="" class="img_icon"></a></li>
-							</ul>
-						</div>
-					</div>
+          <div class="grid_16 text_center">
+            <div class="footer_info">
+              <p>BeRosySpa &copy; 2013  |  <a class="link_1" href="#!/page_privacy">Privacy policy</a>&nbsp;<!-- {%FOOTER_LINK} --></p>
+              <ul class="follow-icon">
+                <li><a href="#"><img src="images/social_icon_1.png" alt="" class="img_icon"></a></li>
+                <li><a href="#"><img src="images/social_icon_2.png" alt="" class="img_icon"></a></li>
+              </ul>
+            </div>
+          </div>
                  </div>
-			</footer>
-           	<!--footer end-->
+      </footer>
 </div>
 <script>
 $(window).load(function() {	
 	$('.page_spinner').fadeOut();
-	$('body').css({overflow:'auto', 'min-height':'568px'})
+	$('body').css({"overflow":'auto', 'min-height':'568px'})
 })
 </script>
 <!-- Coded by Cleric -->
