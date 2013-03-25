@@ -344,7 +344,7 @@ $(window).load(function(){
       m_top=~~(h-h_cont)/2;
       h_new=h;
     } else {
-      m_top=242;
+      m_top=115;
       h_new=h_cont+385;
     }
 

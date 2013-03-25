@@ -1,0 +1,7 @@
+berosy
+90b3d9f5ef8d
+ascii
+cd "/www"
+mput app\index.html
+close
+quit

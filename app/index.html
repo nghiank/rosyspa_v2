@@ -11,15 +11,21 @@
   <link href="css/grid.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="css/style.css">
   <link href="css/jquery.fancybox-1.3.4.css" rel="stylesheet">
+  <link href="css/dark-hive/jquery-ui.css" rel="stylesheet"></link>
+  <link href="css/timePicker.css" rel="stylesheet"></link>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- build:js scripts/scripts.js -->
   <script src="js/jquery-1.7.1.js"></script>
+  <script src="js/lib/jquery-ui.js"></script>
+  <script src="js/lib/jquery.timePicker.js"></script>
   <script src="js/scripts.js"></script>
   <script src="js/GoogleSpreadsheet.js"> </script>
   <script src="js/TimelineJS/compiled/js/storyjs-embed.js"></script>
-
   <script src="js/lib/underscore.js"></script>
   <script src="js/main.js"></script>
+  <!-- endbuild -->
   <!--[if lt IE 9]>
   	<script type="text/javascript" src="js/html5.js"></script>
 	<link rel="stylesheet" href="css/ie.css" media="all">
@@ -212,37 +218,22 @@ Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
 							</li> 
 							<li id="page_product">
                 <div class="container_16">
-                  <div class="grid_16 prefix_1 pad_2" ng-app="productApp">
-                      <div ng-view></div>
+                  <div class="grid_16 prefix_1 pad_2" >
                   </div>
 								</div>
 							</li>
 
 							<li id="page_services">
-								<div class="container_16">
-									<div class="grid_16 prefix_1 pad_2">
-										<h2>Our services</h2>
-										<div class="marg_6">
-											<div class="box_03 marg_5">
-												<img src="images/page3_pic1.jpg" alt="">
-												<a href="#!/page_more">classic manicure</a>
-												<p>Koleacene anritma hasesera deyulety. Cumrsocis natoqu eagnis distmtese dulmuese feugiata lecenas stricies phase ledatyfena nec sit amm easer.</p>
-											</div>
-											<div class="box_03 marg_5">
-												<img src="images/page3_pic2.jpg" alt="">
-												<a href="#!/page_more">hot stone manicure</a>
-												<p>Koleacene anritma hasesera deyulety. Cumrsocis natoqu eagnis distmtese dulmuese feugiata lecenas stricies phase ledatyfena nec sit amm easer.</p>
-											</div>
-											<div class="box_03">
-												<img src="images/page3_pic3.jpg" alt="">
-												<a href="#!/page_more">spa pedicure</a>
-												<p>Koleacene anritma hasesera deyulety. Cumrsocis natoqu eagnis distmtese dulmuese feugiata lecenas stricies phase ledatyfena nec sit amm easer.</p>
-											</div>
-										</div>
-										<a href="#!/page_more" class="readMore01">view all<span></span></a>
-									</div>
-								</div>
 							</li>
+              <li id="page_service_detail">
+                <div class="container_16">
+                <div class="grid_14 prefix_1 ">
+                    <a href="#!/page_services" style='float:right;' class="readMore01">Tro ve dich vu<span></span></a>
+                  </div>
+                  <div class="grid_14 prefix_1" style='overflow-y:auto;overflow-x:hidden; height: 500px;' id='page_service_detail_container'>
+                  </div>
+                </div>
+              </li>
 							<li id="page_gallery">
 								<div class="container_16">
 									<div class="grid_16 prefix_1 pad_2">
@@ -323,93 +314,68 @@ Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
               </li>
 							<li id="page_contact">
 								<div class="container_16">
-									<div class="grid_16 prefix_1 pad_2 bg_3">
+									<div class="grid_16 prefix_1 bg_3">
 										<div class="grid_6 alpha">
 											<h2>Địa Chỉ</h2>
                       <div class='google_map' ></div>
 											<div class="con_info">
 												<h3>381 Sư Vạn Hạnh (nối dài), P.12, Q.10, Hồ Chí Minh</h3>
 												<span>Telephone:</span> +84-8-38620246<br>
-												<span>Movile:</span> 0913595927<br>
-												E-mail: <a class="mailLink" href="mailto:">spa@berosy.vn</a>
+												<span>Mobile:</span> 0913595927<br>
+                        E-mail: <a class="mailLink" href="mailto:">spa@berosy.vn</a><br>
+                        <span>Giờ Làm Việc:</span> 09:00 - 19:00, Từ Thứ 3 Đến Chủ Nhật</small>
 											</div>
 										</div>
 										<div class="grid_8 prefix_1">
-
-												<h2>Contact Form</h2>
+												<h2>Đặt hẹn</h2>
 												<form id="form1">
-													<div class="success"> Contact form submitted!<br>
-														<strong>We will be in touch soon.</strong> 
+													<div class="success">Đặt hẹn thanh cong<br>
+														<strong>Rosyspa se lien he voi ban trong thoi gian ngan.</strong> 
 													</div>
 													<fieldset>
 														<label class="name">
-															<input type="text" value="Name:">
-															<span class="error">*This is not a valid name.</span> <span class="empty">*This field is required.</span> </label>
+															<input type="text" value="Tên khách hàng:">
+                              <span class="error">*Tên không hợp lệ.</span> <span class="empty">*Thông tin bắt buộc.</span> </label>
 														<br>
 														<label class="email">
 															<input type="email" value="E-mail:">
-															<span class="error">*This is not a valid email address.</span> <span class="empty">*This field is required.</span> </label>
+															<span class="error">*Email không hợp lệ</span> <span class="empty">*Thông tin bắt buộc.</span> </label>
 														<br>
 														<label class="phone">
-															 <input type="tel" value="Phone:">
-															 <span class="error">*This is not a valid phone number.</span> <span class="empty">*This field is required.</span> </label>
-														<br>
-														<label class="message">
-															<textarea>Message:</textarea>
-															<span class="error">*The message is too short.</span> <span class="empty">*This field is required.</span> </label>
-														<br>
-														<div class="btns"><a href="#" class="readMore01" data-type="submit">send<span></span></a><a href="#" class="readMore01" data-type="reset">clear<span></span></a></div>
+															 <input type="tel" value="Số điện thoại:">
+															 <span class="error">*Số điện thoại không hợp lệ.</span> <span class="empty">*Thông tin bắt buộc.</span> </label>
+                            <select id='serviceList'>
+                              <option>Chon dich vu</option>
+                              <option >Chăm sóc da</option>
+                              <option >Trị liệu giảm căng thẳng</option>
+                              <option >Trị liệu chống lão hóa</option>
+                              <option >Điều trị chống lão hóa thông minh</option>
+                              <option >Trị liệu chuyên biệt (da dầu)</option>
+                              <option >Trị liệu chuyên biệt (da khô)</option>
+                              <option >Trị liệu kiểm soát mụn</option>
+                              <option >Điều trị mụn chuyên sâu</option>
+                              <option >Trị liệu kiểm soát nám</option>
+                              <option >Điều trị nám chuyên sâu</option>
+                              <option >Trị liệu da nhạy cảm</option>
+                              <option >Trị liệu mắt</option>
+                              <option >Liệu pháp cho bàn chân</option>
+                              <option >Trị liệu nhanh (da mụn)</option>
+                              <option >Căng da</option>
+                              <option >Tiếp oxy cho da</option>
+                            </select>
+														<label class="date">
+															 <input type="text" id='bookingdate' value="Ngày hẹn:" >
+															 <span class="error">*Ngày hẹn không hợp lệ.</span> <span class="empty">*Thông tin bắt buộc.</span> </label>
+														<label class="time">
+															 <input type="text" id='bookingtime' value="Giờ hẹn:" >
+															 <span class="error">*Giờ hẹn không hợp lệ.</span> <span class="empty">*Thông tin bắt buộc.</span> </label>
+                            <label>
+															<textarea>Yêu cầu thêm (nếu có):</textarea>
+														<div class="btns"><a href="#" class="readMore01" data-type="submit">Gửi lịch hẹn<span></span></a></div>
 													</fieldset>
 												</form>
 
 										</div>
-									</div>
-								</div>
-							</li>
-							<li id="page_privacy">
-								<div class="container_16">
-									<div class="grid_14 prefix_1 pad_2">
-										<h2 class="marg_8">Privacy Policy</h2>
-										<div class="scroll">
-											<div>
-												<div class="wrapper">
-													<h3>Cum sociis natoque penatibus et magnis dis</h3>
-													<p class="marg_7">Vestibulum libero nisl, porta vel, scelerisque eget, malesu at, neque. Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. </p>
-													<h3>Aut fugit, sed quia consequuntur magni dolores eos qui ratio</h3>
-													<p class="marg_7">Nam elit magna, hendrerit sit amet, tincidu ac, viverra sed, nulla. Donec porta diam eu massa. Quisque diam lorem, interdum vitae, dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar. Proin ullamcorper urna et felis.<br><br>Vestibulum iaculis lacinia est. Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor. Aliquam congue fermentum nisl. Mauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Nulla venenatis.</p>
-													<h3>Sed perspiciatis unde omnis iste natus error sit voluptatem</h3>
-													<p class="marg_7">Phasellus porta. Fuscemen suscipitum varius mium sociis natoqpenat ibus et magnis dis parturient. montes nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum. </p>
-													E-mail: <a class="mailLink" href="mailto:">info@demolink.org</a>
-												</div>
-											</div>
-										</div>
-										<div class="scroll-btns">
-											<a href="#" data-type="scrollUp" class="downScroll_more"><img src="images/prevSprite.jpg" alt=""></a>
-											<a href="#" data-type="scrollDown" class="upScroll_more"><img src="images/nextSprite.jpg" alt=""></a>
-										</div> 
-									</div>
-								</div>
-							</li>
-							<li id="page_more">
-								<div class="container_16">
-									<div class="grid_14 prefix_1 pad_2">
-										<h2 class="marg_8">Lorem ipsum dolor</h2>
-										<div class="scroll">
-											<div>
-												<div class="wrapper">
-													<h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</h3>
-													<p class="marg_7">Phasellus porta. Fuscemen suscipitum varius mium sociis natoqpenat ibus et magnis dis parturient. montes nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta.</p>
-													<h3>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit</h3>
-													<p class="marg_7">Odio. Morbi nunc odio gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-													<h3>Sed perspiciatis unde omnis iste natus error sit voluptatem</h3>
-													<p class="marg_7">Phasellus porta. Fuscemen suscipitum varius mium sociis natoqpenat ibus et magnis dis parturient. montes nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum. </p>
-												</div>
-											</div>
-										</div>
-										<div class="scroll-btns">
-											<a href="#" data-type="scrollUp" class="downScroll_more"><img src="images/prevSprite.jpg" alt=""></a>
-											<a href="#" data-type="scrollDown" class="upScroll_more"><img src="images/nextSprite.jpg" alt=""></a>
-										</div> 
 									</div>
 								</div>
 							</li>

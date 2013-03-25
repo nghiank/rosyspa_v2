@@ -124,22 +124,83 @@ function populateProductData()
 
 }
 
-function loadProduct()
+function loadFromGoogleSpreadSheet(url, callbackComplete, callbackFailed)
 {
-  var productUrl = "https://docs.google.com/spreadsheet/pub?key=0Al1j6A-YSYd3dDJNazVMN1V3Z1MxeUM3Z3ZJRjlqaWc&output=html";
-  var params = getUrlParam(productUrl);
+  var params = getUrlParam(url);
   var key =  params["key"];
   var worksheet = params["worksheet"] || "od6";
-  var urlJson	= "https://spreadsheets.google.com/feeds/list/" + key + "/" + worksheet + "/public/values?alt=json";
-  $.getJSON(urlJson, function(data){
-      parseProductData(data);
-      populateProductData();
-  }).error( function(jqXHR, textStatus, errorThrown){
-      loadProduct(); //try to load it again     
+  var urljson	= "https://spreadsheets.google.com/feeds/list/" + key + "/" + worksheet + "/public/values?alt=json";
+  $.getJSON(urljson, function(data){
+    callbackComplete(data);
+  }).error( function(jqxhr, textstatus, errorthrown){
+    callbackFailed();
   });
 }
+
+function loadProduct()
+{
+  var producturl = "https://docs.google.com/spreadsheet/pub?key=0Al1j6A-YSYd3dDJNazVMN1V3Z1MxeUM3Z3ZJRjlqaWc&output=html";
+  loadFromGoogleSpreadSheet( producturl, 
+                             function(data) {
+                               parseProductData(data);
+                               populateProductData();
+                             },
+                             loadProduct);
+}
+
+var bigServiceItems = [];
+//Service Data related
+function parseServiceData(data)
+{
+  var entries = data && data.feed && data.feed.entry;
+  if (!entries) return;
+  for(var i = 0 ; i < entries.length; ++i)
+  {
+    var e = entries[i];
+    bigServiceItems.push({
+      id: i,
+      name: e.gsx$name.$t,
+      shortdesc: e.gsx$shortdesc.$t, 
+      description: e.gsx$description.$t,
+      image: e.gsx$image.$t
+    });
+  }
+}
+function populateServiceData()
+{
+  window.loadEjsTemplate( "serviceListing", {allItems: bigServiceItems}, function(data){
+    var th = $('#page_services');
+    th.html(data);
+
+    function updatePageServiceDetail(sid)
+    {
+      var descDetail = bigServiceItems[sid].description;
+      $('#page_service_detail_container').html( descDetail );
+    }
+
+    updatePageServiceDetail(0);
+    $('a[id*=service]', th).click(function(event){
+      var sid = parseInt(event.currentTarget.id.slice(7));
+      if (sid < 0 || sid > bigServiceItems.length - 1) return false;
+      updatePageServiceDetail(sid);
+      window.location.hash = "#!/page_service_detail";
+      return false;
+    });
+  })
+}
+function loadServices()
+{
+  var serviceurl = "https://docs.google.com/spreadsheet/pub?key=0Al1j6A-YSYd3dFpocWM4Zm4ySkhQcnhQbUNGQk9sb3c&output=html";
+  loadFromGoogleSpreadSheet(serviceurl, function(data){
+                              parseServiceData(data);
+                              populateServiceData();
+                            },
+                            loadServices);
+}
+
 $(document).ready(function(){
-  loadProduct()
+  loadProduct();
+  loadServices();
   createStoryJS({
       type:       'timeline',
       width:      '100%',
