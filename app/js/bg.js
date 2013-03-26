@@ -1,4 +1,4 @@
-﻿$(document).ready(function(){
+$(document).ready(function(){
 	$.fn.gallerySplash = function(){
 		var imageHolder = $(".imageHolder",this),
 	 		image = $(".imageHolder > img",this),
@@ -126,4 +126,4 @@
 			})
 		}
 	}
-})
+});

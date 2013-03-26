@@ -1,4 +1,4 @@
-﻿;$(function(){
+;$(function(){
   $.fn.hoverSprite = function(thisItem){
     $(this).each(function(e){
       var item =$(this),
