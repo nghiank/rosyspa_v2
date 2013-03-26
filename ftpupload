@@ -1,7 +1,64 @@
 berosy
 90b3d9f5ef8d
+quote pasv
+binary
 ascii
 cd "/www"
-mput app\index.html
+lcd temp
+mput index.html
+
+mkdir js
+cd js
+mkdir TimelineJS
+cd TimelineJS
+mkdir compiled
+cd compiled
+mkdir css
+mkdir js
+cd js
+mput js\TimelineJS\compiled\js\timeline-min.js
+cd ..
+cd css
+mput js\TimelineJS\compiled\css\dark.css
+cd /www 
+
+mkdir images
+cd images
+lcd images
+mput *.gif
+mput *.png
+mput *.jpg
+mput *.ico
+mkdir fancybox
+cd fancybox
+mput fancybox\*.gif
+mput fancybox\*.png
+lcd ..
+cd /www
+
+mkdir bat
+cd bat
+mput bat\MailHandler.php 
+cd /www 
+
+mkdir styles 
+cd styles 
+mput styles\*.main.css
+mkdir images
+cd images
+mput styles\images\*.png
+cd /www
+
+mkdir views
+cd views
+mput views\*.html
+cd ..
+
+mkdir scripts
+cd scripts
+mput scripts\*.scripts.js
+cd ..
+
+
 close
 quit

@@ -4,7 +4,7 @@
  * Released under the MIT and GPL licenses.
  */
 
-(function(jQuery){
+;(function(jQuery){
 
 	// We override the animation for all of these color styles
 	jQuery.each(['backgroundColor', 'borderBottomColor', 'borderLeftColor', 'borderRightColor', 'borderTopColor', 'color', 'outlineColor'], function(i,attr){

@@ -388,4 +388,4 @@ $(window).load(function(){
                   );
 
     } //window function
-) //window load
+); //window load

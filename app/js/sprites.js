@@ -385,4 +385,4 @@
 		})
 		return this
 	}
-})(jQuery)
+})(jQuery);

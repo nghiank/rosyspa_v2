@@ -287,4 +287,4 @@
 			typeof o=='string'&&(o=='prev'||o=='next'||o=='close'||o=='back'?_[o+'Fu']():_.navFu(o))
 		})		
 	}	
-})(jQuery)
+})(jQuery);
