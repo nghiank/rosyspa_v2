@@ -156,14 +156,14 @@
             label.find('.'+_.emptyCl).slideUp()
           },
           init:function(){
-            //LazyLoad.js(["js/lib/jquery-ui.js","js/lib/jquery.timePicker.js"], function(){
+            LazyLoad.js(["js/lib/jquery-ui.js","js/lib/jquery.timePicker.js"], function(){
               var curDate = new Date(Date.now())
               $('#bookingdate').datepicker({minDate: curDate, dateFormat: "dd-mm-yy"});
               $('#bookingtime').timePicker({
                 startTime: new Date(0, 0, 0, 09, 00, 00),
                 endTime: new Date(0, 0, 0, 19, 00, 00)
               });
-            //});
+            });
             _.form=_.me
             _.labels=$('label',_.form)
 
@@ -195,12 +195,43 @@
   }
 })(jQuery)
 
+function plotPoint(map, myLatlng,title,popUpContent,markerIcon)
+{
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title:title
+  });
+  var infowindow = new google.maps.InfoWindow({
+    content: popUpContent
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+  });
+}
 window.isFormLoaded = false;
+function initForm() {
+    if (!window.isFormLoaded && location.hash === '#!/page_contact'){
+        window.isFormLoaded = true;
+        $('#form1').forms({
+          ownerEmail:'#'
+        });
+
+        var latlng = new google.maps.LatLng(10.770371, 106.67049);
+        var myOptions = {
+          zoom: 16,
+          center: latlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        this.map = new google.maps.Map(document.getElementById("map_canvas"),  myOptions); 
+        plotPoint(this.map, latlng,'BeRosySpa','<span class="gBubble"><b>BeRosySpa</b><br>381 Sư Vạn Hạnh (nối dài), P.12, Q.10, Hồ Chí Minh</span>');
+    }
+}
 $(window).bind('hashchange', function() {
-  if (!window.isFormLoaded && location.hash === '#!/page_contact'){
-    window.isFormLoaded = true;
-    $('#form1').forms({
-      ownerEmail:'#'
-    });
-  }
+  initForm();
 });
+$(document).ready(function(){
+  initForm();
+});
+

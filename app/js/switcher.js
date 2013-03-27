@@ -203,7 +203,7 @@
 		return this
 	}
 	
-	$.fn.tabs=function(o){
+	$.fn.tabs_page=function(o){
 		return this.each(function(){
 			var th=$(this)
 				,_=th.data('tabs')||{
@@ -271,7 +271,7 @@
 						_.ul=$('>ul',_.me)
 						_.li=$('>li',_.ul)
 						_.preFu(_)
-						_.navs&&_.navs.navs(function(n){th.tabs(n)})
+						_.navs&&_.navs.navs(function(n){th.tabs_page(n)})
 					}
 				}
 			

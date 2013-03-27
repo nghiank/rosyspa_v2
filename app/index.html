@@ -3,9 +3,6 @@
 <head>
   <title></title>
   <meta charset="utf-8">
-  <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Ovo' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
 
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/reset.css">
@@ -15,9 +12,6 @@
   <link rel="stylesheet" href="styles/jquery-ui.css" ></link>
   <link rel="stylesheet" href="styles/timePicker.css" ></link>
   <!-- endbuild -->
-
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
   <!--[if lt IE 9]>
   	<script type="text/javascript" src="js/html5.js"></script>
 	<link rel="stylesheet" href="css/ie.css" media="all">
@@ -308,7 +302,7 @@ Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
 									<div class="grid_16 prefix_1 bg_3">
 										<div class="grid_6 alpha">
 											<h2>Địa Chỉ</h2>
-                      <div class='google_map' ></div>
+                      <div class='google_map' id='map_canvas' ></div>
 											<div class="con_info">
 												<h3>381 Sư Vạn Hạnh (nối dài), P.12, Q.10, Hồ Chí Minh</h3>
 												<span>Telephone:</span> +84-8-38620246<br>
@@ -391,9 +385,6 @@ Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
 </div>
   <!-- build:js scripts/scripts.js -->
   <script src="js/jquery-1.7.1.js"></script>
-  <script src="js/lib/jquery-ui.js"></script>
-  <script src="js/lib/jquery.timePicker.js"></script>
-
   <script src="js/hoverSprite.js"></script>
   <script src="js/jquery.easing.js"></script>
   <script src="js/jquery.backgroundpos.min.js"></script>
@@ -414,7 +405,7 @@ Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
   <script src="js/forms.js"></script>
   <script src="js/scripts.js"></script>
 
-  <script src="js/lib/underscore.js"></script>
+  <script src="js/lib/underscore-min.js"></script>
   <script src="js/main.js"></script>
   <!-- endbuild -->
 <script>preloadIMG(["arrow_next_act.png", "arrow_prev_act.png", "pic_bg_over.png", "icon_zoom.png"])</script>
@@ -424,6 +415,7 @@ Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
     $('body').css({"overflow":'auto', 'min-height':'568px'})
   })
 </script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script> 
 <!-- Coded by Cleric -->
 </body>
 </html>

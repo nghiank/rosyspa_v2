@@ -200,24 +200,28 @@ function loadServices()
                             IS_OFFLINE ? null : loadServices);
 }
 
+window.isTimelineLoaded = false;
+function initTimeline()
+{
+  if (!window.isTimelineLoaded && location.hash === "#!/page_promotion") {
+    window.isTimelineLoaded = true;
+    createStoryJS({
+      type:       'timeline',
+      width:      '100%',
+      height:     '100%',
+      source: 'https://docs.google.com/spreadsheet/pub?key=0ApI-2uhbGvbbdFNCUnpWd2hnRlpWY3NoOTlMMUJDdGc&output=html',
+      start_at_end:true,
+      embed_id:   'timeline',
+      css: 'js/TimelineJS/compiled/css/dark.css',
+      js: 'js/TimelineJS/compiled/js/timeline-min.js'
+    });
+  }
+}
+$(window).bind('hashchange', function(){
+  initTimeline();
+});
 $(document).ready(function(){
   loadProduct();
   loadServices();
-
-  $(window).bind('hashchange', function(){
-    if (location.hash === "#!/page_promotion")
-    {
-      createStoryJS({
-        type:       'timeline',
-        width:      '100%',
-        height:     '100%',
-        source: 'https://docs.google.com/spreadsheet/pub?key=0ApI-2uhbGvbbdFNCUnpWd2hnRlpWY3NoOTlMMUJDdGc&output=html',
-        start_at_end:true,
-        embed_id:   'timeline',
-        css: 'js/TimelineJS/compiled/css/dark.css',
-        js: 'js/TimelineJS/compiled/js/timeline-min.js'
-      });
-    }
-    console.log( 'hash changed to ' + location.hash);
-  });
+  initTimeline();
 });

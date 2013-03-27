@@ -237,7 +237,7 @@ $(window).load(function(){
   var content=$('#content'),
   nav=$('.menu');
 
-  $('#content').tabs({
+  $('#content').tabs_page({
 
     preFu:function(_){
       _.li.css({left:"-1700px",'visibility':'hidden'});
@@ -310,7 +310,7 @@ $(window).load(function(){
     }
   })
   .navs(function(n){			
-    $('#content').tabs(n);
+    $('#content').tabs_page(n);
   })
 
 
