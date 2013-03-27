@@ -156,12 +156,14 @@
             label.find('.'+_.emptyCl).slideUp()
           },
           init:function(){
-            var curDate = new Date(Date.now())
-            $('#bookingdate').datepicker({minDate: curDate, dateFormat: "dd-mm-yy"});
-            $('#bookingtime').timePicker({
-              startTime: new Date(0, 0, 0, 09, 00, 00),
-              endTime: new Date(0, 0, 0, 19, 00, 00)
-            });
+            //LazyLoad.js(["js/lib/jquery-ui.js","js/lib/jquery.timePicker.js"], function(){
+              var curDate = new Date(Date.now())
+              $('#bookingdate').datepicker({minDate: curDate, dateFormat: "dd-mm-yy"});
+              $('#bookingtime').timePicker({
+                startTime: new Date(0, 0, 0, 09, 00, 00),
+                endTime: new Date(0, 0, 0, 19, 00, 00)
+              });
+            //});
             _.form=_.me
             _.labels=$('label',_.form)
 

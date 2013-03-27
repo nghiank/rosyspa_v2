@@ -6,7 +6,6 @@
   <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Ovo' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=six+caps' rel='stylesheet' type='text/css'>
 
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/reset.css">
@@ -19,35 +18,6 @@
 
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-  <!-- build:js scripts/scripts.js -->
-  <script src="js/jquery-1.7.1.js"></script>
-  <script src="js/lib/jquery-ui.js"></script>
-  <script src="js/lib/jquery.timePicker.js"></script>
-
-  <script src="js/hoverSprite.js"></script>
-  <script src="js/jquery.easing.js"></script>
-  <script src="js/jquery.backgroundpos.min.js"></script>
-  <script src="js/superfish.js"></script>
-  <script src="js/switcher.js"></script>
-  <script src="js/forms.js"></script>
-  <script src="js/googleMap.js"></script>
-  <script src="js/sprites.js"></script>
-  <script src="js/jquery.mousewheel.js"></script>
-  <script src="js/uScroll.js"></script>
-  <script src="js/jquery.color.js"></script>
-  <script src="js/jquery.cycle.all.min.js"></script>
-  <script src="js/preloadIMG.js"></script>
-  <script src="js/MathUtils.js"></script>
-  <script src="js/jquery.transform-0.9.3.min.js"></script>
-  <script src="js/bg.js"></script>
-  <script src="js/jquery.fancybox-1.3.4.pack.js"></script>
-  <script src="js/scripts.js"></script>
-
-  <script src="js/GoogleSpreadsheet.js"> </script>
-  <script src="js/TimelineJS/compiled/js/storyjs-embed.js"></script>
-  <script src="js/lib/underscore.js"></script>
-  <script src="js/main.js"></script>
-  <!-- endbuild -->
   <!--[if lt IE 9]>
   	<script type="text/javascript" src="js/html5.js"></script>
 	<link rel="stylesheet" href="css/ie.css" media="all">
@@ -59,7 +29,6 @@
 	<![endif]-->
 </head>
 <body>
-<script>preloadIMG(["arrow_next_act.png", "arrow_prev_act.png", "pic_bg_over.png", "icon_zoom.png"])</script>
 <div class="glob">
 	<div class="page_spinner"></div>
 	<div id="galleryHolder">
@@ -420,11 +389,39 @@ Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
                  </div>
       </footer>
 </div>
+  <!-- build:js scripts/scripts.js -->
+  <script src="js/jquery-1.7.1.js"></script>
+  <script src="js/lib/jquery-ui.js"></script>
+  <script src="js/lib/jquery.timePicker.js"></script>
+
+  <script src="js/hoverSprite.js"></script>
+  <script src="js/jquery.easing.js"></script>
+  <script src="js/jquery.backgroundpos.min.js"></script>
+  <script src="js/superfish.js"></script>
+  <script src="js/switcher.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/jquery.mousewheel.js"></script>
+  <script src="js/uScroll.js"></script>
+  <script src="js/jquery.color.js"></script>
+  <script src="js/jquery.cycle.all.min.js"></script>
+  <script src="js/preloadIMG.js"></script>
+  <script src="js/MathUtils.js"></script>
+  <script src="js/jquery.transform-0.9.3.min.js"></script>
+  <script src="js/bg.js"></script>
+  <script src="js/jquery.fancybox-1.3.4.pack.js"></script>
+  <script src="js/scripts.js"></script>
+
+  <script src="js/TimelineJS/compiled/js/storyjs-embed.js"></script>
+  <script src="js/lib/underscore.js"></script>
+  <script src="js/main.js"></script>
+  <!-- endbuild -->
+<script>preloadIMG(["arrow_next_act.png", "arrow_prev_act.png", "pic_bg_over.png", "icon_zoom.png"])</script>
 <script>
-$(window).load(function() {	
-	$('.page_spinner').fadeOut();
-	$('body').css({"overflow":'auto', 'min-height':'568px'})
-})
+  $(window).load(function() {	
+    $('.page_spinner').fadeOut();
+    $('body').css({"overflow":'auto', 'min-height':'568px'})
+  })
 </script>
 <!-- Coded by Cleric -->
 </body>

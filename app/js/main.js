@@ -1,3 +1,5 @@
+var IS_OFFLINE = true;
+
 function getUrlParam(string) {
   var str = string.toString();
 
@@ -131,9 +133,9 @@ function loadFromGoogleSpreadSheet(url, callbackComplete, callbackFailed)
   var worksheet = params["worksheet"] || "od6";
   var urljson	= "https://spreadsheets.google.com/feeds/list/" + key + "/" + worksheet + "/public/values?alt=json";
   $.getJSON(urljson, function(data){
-    callbackComplete(data);
+    callbackComplete && callbackComplete(data);
   }).error( function(jqxhr, textstatus, errorthrown){
-    callbackFailed();
+    callbackFailed && callbackFailed();
   });
 }
 
@@ -145,7 +147,7 @@ function loadProduct()
                                parseProductData(data);
                                populateProductData();
                              },
-                             loadProduct);
+                             IS_OFFLINE ? null: loadProduct);
 }
 
 var bigServiceItems = [];
@@ -195,12 +197,15 @@ function loadServices()
                               parseServiceData(data);
                               populateServiceData();
                             },
-                            loadServices);
+                            IS_OFFLINE ? null : loadServices);
 }
 
 $(document).ready(function(){
   loadProduct();
   loadServices();
+  window.bind('hashchange', function(){
+    console.log( 'hash changed to ' + location.hash);
+  });
   createStoryJS({
       type:       'timeline',
       width:      '100%',

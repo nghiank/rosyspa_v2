@@ -1,0 +1,81 @@
+#!/bin/sh
+ftp 112.213.89.59 << ftpEOF
+prompt
+
+quote pasv
+binary
+cd "/www"
+lcd temp
+mput index.html
+
+mkdir js
+cd js
+mkdir TimelineJS
+cd TimelineJS
+mkdir compiled
+cd compiled
+mkdir css
+mkdir js
+cd js
+lcd js/TimelineJS/compiled/js
+mput timeline-min.js
+cd ..
+cd css
+lcd ..
+lcd css
+mput dark.css
+mkdir themes
+cd themes
+lcd themes
+mput loading.gif
+mput timeline-dark.png
+cd /www 
+lcd ../../../../..
+mkdir images
+cd images
+lcd images
+mput *.gif
+mput *.png
+mput *.jpg
+mput *.ico
+lcd fancybox
+mkdir fancybox
+cd fancybox
+mput *.gif
+mput *.png
+lcd ../..
+cd /www
+
+lcd bat
+mkdir bat
+cd bat
+mput MailHandler.php
+cd /www
+lcd ..
+
+mkdir styles
+cd styles
+lcd styles
+mput *.main.css
+mkdir images
+cd images
+lcd images
+mput *.png
+cd /www
+lcd ../..
+
+mkdir views
+cd views
+lcd views
+mput *.html
+cd ..
+lcd ..
+
+mkdir scripts
+cd scripts
+lcd scripts
+mput *.scripts.js
+cd ..
+lcd ..
+close
+quit
