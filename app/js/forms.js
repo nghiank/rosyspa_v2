@@ -194,8 +194,13 @@
     })
   }
 })(jQuery)
-$(window).load(function(){
-  $('#form1').forms({
-    ownerEmail:'#'
-  })
+
+window.isFormLoaded = false;
+$(window).bind('hashchange', function() {
+  if (!window.isFormLoaded && location.hash === '#!/page_contact'){
+    window.isFormLoaded = true;
+    $('#form1').forms({
+      ownerEmail:'#'
+    });
+  }
 });

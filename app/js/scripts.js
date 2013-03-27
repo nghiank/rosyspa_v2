@@ -1,25 +1,3 @@
-//include('js/hoverSprite.js');
-//include('js/jquery.easing.js');
-//include('js/jquery.backgroundpos.min.js');
-//include('js/superfish.js');
-//include('js/switcher.js');
-//include('js/forms.js');
-//include('js/googleMap.js');
-//include('js/sprites.js');
-//include('js/jquery.mousewheel.js');
-//include('js/uScroll.js');
-//include('js/jquery.color.js');
-//include('js/jquery.cycle.all.min.js');
-//include("js/preloadIMG.js");
-//include('js/MathUtils.js');
-//include('js/jquery.transform-0.9.3.min.js');
-//include('js/bg.js');
-//include("js/jquery.fancybox-1.3.4.pack.js");
-
-//----Include-Function----
-function include(url){ 
-  document.write('<script src="'+ url + '" type="text/javascript"></script>'); 
-}
 //--------global-------------
 var isSplash = true;
 var isFirst = true;
