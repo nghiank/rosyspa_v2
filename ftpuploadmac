@@ -10,6 +10,16 @@ mput index.html
 
 mkdir js
 cd js
+lcd js
+mput jquery-1.7.1.js
+mkdir lib
+cd lib
+lcd lib
+mput underscore-min.js
+lcd ..
+cd ..
+lcd ..
+cd ..
 mkdir TimelineJS
 cd TimelineJS
 mkdir compiled
