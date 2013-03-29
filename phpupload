@@ -1,0 +1,15 @@
+#!/bin/sh
+ftp 112.213.89.59 << ftpEOF
+prompt
+
+quote pasv
+binary
+cd "/www"
+lcd temp
+
+lcd bat
+mkdir bat
+cd bat
+mput *.php
+close
+quit

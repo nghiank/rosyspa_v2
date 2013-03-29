@@ -168,23 +168,25 @@ function parseServiceData(data)
     });
   }
 }
+
+function updatePageServiceDetail(sid)
+{
+  var descDetail = bigServiceItems[sid].description;
+  $('#page_service_detail_container').html( descDetail );
+}
+
 function populateServiceData()
 {
   window.loadEjsTemplate( "serviceListing", {allItems: bigServiceItems}, function(data){
     var th = $('#page_services');
     th.html(data);
 
-    function updatePageServiceDetail(sid)
-    {
-      var descDetail = bigServiceItems[sid].description;
-      $('#page_service_detail_container').html( descDetail );
-    }
-
     updatePageServiceDetail(0);
-    $('a[id*=service]', th).click(function(event){
+    $('a[id*=service]').click(function(event){
       var sid = parseInt(event.currentTarget.id.slice(7));
-      if (sid < 0 || sid > bigServiceItems.length - 1) return false;
       updatePageServiceDetail(sid);
+      window.location.hash = "#!/page_service_detail";
+      if (sid < 0 || sid > bigServiceItems.length - 1) return false;
       window.location.hash = "#!/page_service_detail";
       return false;
     });

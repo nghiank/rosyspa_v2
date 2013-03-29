@@ -15,7 +15,7 @@ mput jquery-1.7.1.js
 mkdir lib
 cd lib
 lcd lib
-mput underscore-min.js
+mput *.js
 lcd ..
 cd ..
 lcd ..
