@@ -222,8 +222,28 @@ function initTimeline()
 $(window).bind('hashchange', function(){
   initTimeline();
 });
+
+//Lazy load images
+function loadImageLazily()
+{
+  var el = $('.lazy');
+  for(var i = 0; i < el.length; ++i)
+  {
+    var img = new Image();
+    var src = $(el).attr('data-original');
+    img.onload = function(){
+      $(el).attr('src', img.src);
+      $("#galleryHolder").gallerySplash();
+    };
+    img.src = src;
+  }
+}
+
 $(document).ready(function(){
   loadProduct();
   loadServices();
   initTimeline();
+  loadImageLazily();
 });
+
+

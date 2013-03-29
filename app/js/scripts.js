@@ -42,7 +42,6 @@ $(document).ready(function(){
 //------WinLoad-------------  
 $(window).load(function(){  
   var win=$(window)
-  $("#galleryHolder").gallerySplash();
   //*************** SPLASH ******************//
 
 

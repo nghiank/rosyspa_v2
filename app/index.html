@@ -27,7 +27,7 @@
 	<div class="page_spinner"></div>
 	<div id="galleryHolder">
 		<div class="imageHolder">
-			<img src="images/bg_pic.jpg" alt>
+			<img id='bgImg' class="lazy" data-original="images/bg_pic.jpg" src="images/pic_bg_over.png" style='height:950px; width: 1520px;' alt>
 		</div>
 	</div>
 		<!--header -->                   
@@ -83,32 +83,28 @@
 						<a href="#" id='service0'><div class="pic_act"></div></a>
 						<div class="info1">
 							<img src="images/icon_1.png" alt="">
-							<p class="color_01">Shellac</p>
-							<p>Pedicure</p>
+							<p class="color_01">Chăm sóc tóc</p>
 						</div>
 					</li>
 					<li class="item_02">
 						<a href="#" id='service1'><div class="pic_act"></div></a>
 						<div class="info2">
 							<img src="images/icon_2.png" alt="">
-							<p class="color_01">Restore</p>
-							<p>&<br>Rejuvenate</p>
+							<p class="color_01">Cham soc da</p>
 						</div>
 					</li>
 					<li class="item_03">
 						<a href="#" id='service2'><div class="pic_act"></div></a>
 						<div class="info3">
 							<img src="images/icon_3.png" alt="">
-							<p class="color_01">Nail Spa</p>
-							<p>&<br>Paraffin Wax</p>
+							<p class="color_01">Tư vấn sức khỏe</p>
 						</div>
 					</li>
 					<li class="item_04">
 						<a href="#" id='service3'><div class="pic_act"></div></a>
 						<div class="info4">
 							<img src="images/icon_4.png" alt="">
-							<p class="color_01">Luxurious</p>
-							<p>Treatments</p>
+							<p class="color_01">Hệ thống "mini shop"</p>
 						</div>
 					</li>
 					<li class="item_05">
@@ -150,7 +146,7 @@ Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
 									<div class="grid_16 pad_2">
 										<div class="grid_6 prefix_1 suffix_1 alpha">
 											<article>
-												<h2>Loi Chao !</h2>
+												<h2>Lời chào!</h2>
 												<img src="images/page2_pic1.jpg" alt="" class="marg_1">
 												<h3>Hãy đến với  BeRosy để được trải nghiệm,</h3>
 												<p class="pad_1">Sử dụng mỹ phẩm Dermalogica, kết hợp với chương trình chăm sóc da chuyên nghiệp, thêm vào đó là tấm lòng nhiệt huyết và bàn tay khéo léo của các chuyên viên BeRosy, chúng tôi tin tưởng rằng các bạn nhất định sẽ “be rosy”...</p>
@@ -159,45 +155,27 @@ Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
 										</div>
 										<div class="grid_7 prefix_1 omega">
 											<div class="grid_7 alpha">
-												<h2>luxurious treatments</h2>
+												<h2>Điều trị đặc biệt</h2>
 												<div class="grid_7 alpha marg_2">
 													<div class="grid_3 alpha">
 														<img src="images/page2_pic2.jpg" alt="">
 													</div>
 													<div class="grid_4 omega">
-														<p class="marg_3"><a href="#" class="button">Binritma Kasera Veyulet</a><br>cumrsocis nateagnis distese dulmue seugia lecenas stricies phase ledat enaec sit ame <br>easer erment. </p>
+														<p class="marg_3"><a href="#" class="button"></a>BeRosySpa sẽ mang đến cho bạn những giây phút thư giãn thoải mái, kết hợp nhiều chương trình chăm sóc da đặc biệt sẽ giúp bạn có một làn da tươi tắn.</p>
 													</div>
 												</div>
 												<div class="line_hor"></div>
 											</div>
 											<div class="grid_7 alpha">
-												<h2>our services</h2>
-												<div class="bg_2">
+												<h2>Dịch vụ</h2>
 													<div class="box_01">
 														<ul class="list_1">
-															<li><a href="#">Shellac Pedicure</a></li>
-															<li><a href="#">Make-up Application</a></li>
-															<li><a href="#">French Manicure</a></li>
-														</ul>
-														<ul class="list_1 marg_4">
-															<li><a href="#">Facial Treatment</a></li>
-															<li><a href="#">Hair Design and Finish</a></li>
-															<li><a href="#">Shellac Manicure</a></li>
+															<li><a href="#">Trị liệu các vấn đề về da</a></li>
+															<li><a href="#">Chăm sóc tóc</a></li>
+															<li><a href="#">Tư vấn sức khỏe</a></li>
+															<li><a href="#">Hệ thống "mini shop</a></li>
 														</ul>
 													</div>
-													<div class="box_02">
-														<ul class="list_1">
-															<li><a href="#">Eyebrow Tint</a></li>
-															<li><a href="#">Paraffin Wax</a></li>
-															<li><a href="#">Classic Manicure</a></li>
-														</ul>
-														<ul class="list_1 marg_4">
-															<li><a href="#">Body Treatment</a></li>
-															<li><a href="#">Men's Manicure</a></li>
-															<li><a href="#">Deep Cleansing</a></li>
-														</ul>
-													</div>
-												</div>
 											</div>
 										</div>
 									</div>
@@ -215,7 +193,7 @@ Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
               <li id="page_service_detail">
                 <div class="container_16">
                   <div class="grid_14 prefix_1 ">
-                      <a href="#!/page_services" style='float:right;' class="readMore01">Tro ve dich vu<span></span></a>
+                      <a href="#!/page_services" style='float:right;' class="readMore01">Trở về dịch vụ<span></span></a>
                   </div>
                   <div class="grid_14 prefix_1" style='overflow-y:auto;overflow-x:hidden; height: 500px;' id='page_service_detail_container'>
                   </div>
@@ -289,16 +267,13 @@ Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
 							</li>
               <li id="page_career">
                 <div class="container_16">
-									<div class="grid_16 prefix_1 pad_2 bg_3">
+									<div class="grid_16 prefix_1 pad_2">
                         <div class='grid_16'>
                           <h2>Tuyển dụng</h2>
                         </div>
                         <div class='grid_7'>
-                            <img src="images/career.jpg" alt="" style='width:200px; height:200px'>
-                        </div>
-                        <div class='grid_7'>
-                          <h3> Co hoi nghe nghiep o rosyspa </h3> 
-                          <p> Mọi thông tin chi tiết về nghề nghiệp xin vui lòng liên hệ rosyspa qua email <b>spa@berosy.vn</b></p>
+                          <h3>Cơ hội nghề nghiệp ở beRosySpa</h3> 
+                          <p>Mọi thông tin chi tiết về nghề nghiệp xin vui lòng liên hệ rosyspa qua email <b>spa@berosy.vn</b></p>
                         </div>
                   </div>
                 </div>
@@ -428,13 +403,13 @@ Xin chân thành cảm ơn và hân hạnh chào đón các bạn!
 
   <script src="js/main.js"></script>
   <!-- endbuild -->
-<script>preloadIMG(["arrow_next_act.png", "arrow_prev_act.png", "pic_bg_over.png", "icon_zoom.png"])</script>
-<script>
-  $(window).load(function() {	
-    $('.page_spinner').fadeOut();
-    $('body').css({"overflow":'auto', 'min-height':'568px'})
-  })
-</script>
+  <script>preloadIMG(["arrow_next_act.png", "arrow_prev_act.png", "pic_bg_over.png", "icon_zoom.png"])</script>
+  <script>
+    $(window).load(function() {	
+      $('.page_spinner').fadeOut();
+      $('body').css({"overflow":'auto', 'min-height':'568px'})
+    })
+  </script>
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script> 
 <!-- Coded by Cleric -->
 </body>
