@@ -229,7 +229,7 @@ function initTimeline()
       type:       'timeline',
       width:      '100%',
       height:     '100%',
-      source: 'https://docs.google.com/spreadsheet/pub?key=0ApI-2uhbGvbbdFNCUnpWd2hnRlpWY3NoOTlMMUJDdGc&output=html',
+      source: 'https://docs.google.com/spreadsheet/pub?key=0Al1j6A-YSYd3dDQzUzloZTJaS0dtMEFNNnpoeTVoS3c&output=html',
       start_at_end:true,
       embed_id:   'timeline',
       css: 'js/TimelineJS/compiled/css/dark.css',
@@ -371,8 +371,8 @@ function populateGallery()
   for(var i = 0 ; i < allGallery.length; ++i)
   {
     var anImg = "<li>";
-    var imgLoading = '../images/main-spinner.gif';
-    anImg += "<a href='" + allGallery[i].image + "'><img id='galleryImg" + i + "' style='width:197px; height: 189px;' src='" + + "' /></a>"
+    var imgLoading = '../images/main_spinner.gif';
+    anImg += "<a href='" + allGallery[i].image + "'><img id='galleryImg" + i + "' style='width:197px; height: 189px;background:url(" + imgLoading + ") 85px 80px no-repeat;' /></a>"
     anImg += "</li>";
     if ((i % 8 == 0) && i)
     {
@@ -388,20 +388,20 @@ function populateGallery()
     $page.append($(curSlide));
   } 
 
-  var undone = allGallery.lenght;
+  var undone = allGallery.length;
   for(var i = 0; i < allGallery.length; ++i)
   {
     var img =new Image();
     img.src = allGallery[i].thumbnail;
-    img.onload = function(source){
+    img.onload = function(index, source){
       return function(){
         undone -= 1;
-        $('#galleryImg' + i, $page).attr(src, source);
+        $('#galleryImg' + index, $page).attr("src", source);
         if (undone == 0) {
           slideGallery();
         }
       };
-    }(img.src);
+    }(i, img.src);
   }
 }
 

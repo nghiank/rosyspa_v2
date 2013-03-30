@@ -7,7 +7,7 @@
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 body{
 	font: 14px/20px Arial, Helvetica, sans-serif;
@@ -222,7 +222,7 @@ h3{
 	color: #fff;  
 	display: inline-block; 
 	word-spacing: 3px;
-	text-transform: uppercase;  
+	/*text-transform: uppercase;  */
 	text-align: left;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
