@@ -388,18 +388,14 @@ function populateGallery()
     $page.append($(curSlide));
   } 
 
-  var undone = allGallery.length;
+  slideGallery();
   for(var i = 0; i < allGallery.length; ++i)
   {
     var img =new Image();
     img.src = allGallery[i].thumbnail;
     img.onload = function(index, source){
       return function(){
-        undone -= 1;
         $('#galleryImg' + index, $page).attr("src", source);
-        if (undone == 0) {
-          slideGallery();
-        }
       };
     }(i, img.src);
   }

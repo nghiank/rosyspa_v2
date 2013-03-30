@@ -67,6 +67,19 @@
               if(el.is(k))
                 ret=d.rx.test(el.find(d.target).val())
             })
+
+            if (ret && $(el).attr('class').indexOf('date') != -1)
+            {
+              var dt = _.getValFromLabel($('.date',_.form)); 
+              var parts = dt.match(/(\d+)/g);
+              if (parts.length != 3){
+                 ret = false;
+              } else
+              {
+                  var dd = new Date( parts[2], parts[1] - 1, parts[0]);
+                  if (dd.getDay() == 1) ret = false; // Monday is invalid
+              }
+            }
             return ret
           },
           isEmpty:function(el){
@@ -90,7 +103,8 @@
                   _.hideErrorFu(th.removeClass(_.invalidCl))
                 else
                   _.showErrorFu(th.addClass(_.invalidCl))								
-            })
+            });
+
           },
           getValFromLabel:function(label){
             var val=$('input,textarea',label).val()
@@ -102,6 +116,7 @@
           },
           submitFu:function(){
             _.validateFu(_.labels);
+            //Check for spam
             if (_.getValFromLabel($('.phone',_.form)) !==
                 _.getValFromLabel($('.phonespam',_.form)))
             {
@@ -285,7 +300,7 @@ function initForm() {
 
         if (typeof(google) !== 'undefined')
         {
-          var latlng = new google.maps.LatLng(10.770371, 106.67049);
+          var latlng = new google.maps.LatLng(10.771352,106.66977);
           var myOptions = {
             zoom: 16,
             center: latlng,
