@@ -17,7 +17,8 @@ body{
 	min-width: 960px;	
 	min-height: 1000px; 
 	height: 100%; 
-	overflow: hidden;
+	overflow-x: hidden;
+  overflow-y: auto;
 }
 /* Global Structure ========================================================= */
 .main {
@@ -202,7 +203,7 @@ h3{
 	top: 73px; 
 	left: 21px;     
   background: url(../images/sub_menu.png) repeat 0% 0%;
-	width: 86px;
+	width: 98px;
 	padding: 0 0 0px;
 }
 .bg_arr{
@@ -214,7 +215,7 @@ h3{
 	position: relative; 
 	display: block;  
 	float: left; 
-	margin: 10px 14px 1px 0;
+	margin: 10px 8px 1px 0;
 }
 .submenu_1 a{ 
 	letter-spacing: -1px;
@@ -354,7 +355,7 @@ h3{
 	display: block;
 	width: 232px;
 	height: 221px;
-	background: url(../images/item01.png) 0 0 no-repeat;
+	background: url(../images/main_spinner.gif) 100px 150px no-repeat;
 	left: 22px;
 	z-index: 1;
 	margin-top: 20px;
@@ -378,7 +379,7 @@ h3{
 	display: block;
 	width: 331px;
 	height: 318px;
-	background: url(../images/item02.png) 0 0 no-repeat;
+	background: url(../images/main_spinner.gif) 150px 150px no-repeat;
 	left: 22px;
 	z-index: 1;
 	margin-top: 24px;
@@ -406,7 +407,7 @@ h3{
 	display: block;
 	width: 351px;
 	height: 333px;
-	background: url(../images/item03.png) 0 0 no-repeat;
+	background: url(../images/main_spinner.gif) 150px 190px no-repeat;
 	left: 21px;
 	z-index: 1;
 	margin-top: 22px;
@@ -434,7 +435,7 @@ h3{
 	display: block;
 	width: 253px;
 	height: 241px;
-	background: url(../images/item04.png) 0 0 no-repeat;
+	background: url(../images/main_spinner.gif) 110px 120px no-repeat;
 	left: 21px;
 	z-index: 1;
 	margin-top: 24px;
@@ -465,7 +466,7 @@ h3{
 	display: block;
 	width: 253px;
 	height: 241px;
-	background: url(../images/item05.png) 0 0 no-repeat;
+	background: url(../images/main_spinner.gif) 100px 150px no-repeat;
 	left: 21px;
 	z-index: 1;
 	margin-top: 22px;

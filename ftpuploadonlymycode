@@ -1,0 +1,25 @@
+#!/bin/sh
+ftp 112.213.89.59 << ftpEOF
+prompt
+
+quote pasv
+binary
+cd "/www"
+lcd temp
+mput index.html
+
+mkdir styles
+cd styles
+lcd styles
+mput *.main.css
+cd /www
+lcd ..
+
+mkdir scripts
+cd scripts
+lcd scripts
+mput *.scripts.js
+cd ..
+lcd ..
+close
+quit

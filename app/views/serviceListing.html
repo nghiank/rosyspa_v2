@@ -1,6 +1,6 @@
 <div class="container_16">
   <div class="grid_16 prefix_1">
-    <h2>Dich Vu</h2>
+    <h2>Chọn dịch vụ</h2>
     <% for(var i = 0; i < allItems.length; ++i) {%>
       <div class="grid_7 alpha marg_2">
         <div class="grid_3 alpha">
@@ -8,7 +8,7 @@
         </div>
         <div class="grid_4 omega">
           <p class="marg_3"><a href="#" id='service<%=allItems[i].id%>' class="button"><%=allItems[i].name%></a><br><%= allItems[i].shortdesc%><br></p>
-          <a href="#" id='service<%=allItems[i].id%>' class="readMore01">Chi Tiet<span></span></a>
+          <a href="#" id='service<%=allItems[i].id%>' class="readMore01">Chi tiết<span></span></a>
         </div>
       </div>
     <% } %>

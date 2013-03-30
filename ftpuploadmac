@@ -19,7 +19,6 @@ mput *.js
 lcd ..
 cd ..
 lcd ..
-cd ..
 mkdir TimelineJS
 cd TimelineJS
 mkdir compiled
