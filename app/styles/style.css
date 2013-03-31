@@ -354,12 +354,12 @@ h3{
 .item_01 .pic_act{
 	position: absolute;
 	display: block;
-	width: 232px;
-	height: 221px;
+	width: 255px;
+	height: 241px;
 	background: url(../images/main_spinner.gif) 100px 150px no-repeat;
-	left: 22px;
+	left: 0px;
 	z-index: 1;
-	margin-top: 20px;
+	margin-top: 0px;
 }
 .info1{
 	text-align: center;
@@ -378,12 +378,12 @@ h3{
 .item_02 .pic_act{
 	position: absolute;
 	display: block;
-	width: 331px;
-	height: 318px;
+	width: 355px;
+	height: 342px;
 	background: url(../images/main_spinner.gif) 150px 150px no-repeat;
-	left: 22px;
+	left: -1px;
 	z-index: 1;
-	margin-top: 24px;
+	margin-top: 0px;
 }
 .info2{
 	text-align: center;
@@ -434,12 +434,12 @@ h3{
 .item_04 .pic_act{
 	position: absolute;
 	display: block;
-	width: 253px;
-	height: 241px;
+	width: 272px;
+	height: 263px;
 	background: url(../images/main_spinner.gif) 110px 120px no-repeat;
-	left: 21px;
+	left: 0px;
 	z-index: 1;
-	margin-top: 24px;
+	margin-top: -1px;
 }
 .info4{
 	text-align: center;
@@ -465,12 +465,12 @@ h3{
 .item_05 .pic_act{
 	position: absolute;
 	display: block;
-	width: 253px;
-	height: 241px;
+	width: 272px;
+	height: 265px;
 	background: url(../images/main_spinner.gif) 100px 150px no-repeat;
-	left: 21px;
+	left: 0px;
 	z-index: 1;
-	margin-top: 22px;
+	margin-top: 0px;
 }
 .info5{
 	text-align: center;
