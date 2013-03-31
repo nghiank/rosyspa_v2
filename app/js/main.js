@@ -425,12 +425,46 @@ function loadGallery()
                             IS_OFFLINE ? null : loadGallery);
 }
 
+function loadStartUpNotification()
+{
+  var startUpUrl = "https://docs.google.com/spreadsheet/pub?key=0Al1j6A-YSYd3dFRRdTgxdFhZMGFfZ2ZPQlhQdjBGTlE&output=html";
+  ////if it fail, dont do anything
+  loadFromGoogleSpreadSheet(startUpUrl, function(data){
+    var entries = data && data.feed && data.feed.entry;
+    if (!entries) return;
+    var isOnStartUp = '0';
+    var contentLoaded = "Welcome to beRosySpa";
+    for(var i = 0 ; i < entries.length; ++i)
+    {
+      var e = entries[i];
+      if (e.gsx$attr.$t && e.gsx$attr.$t === 'isOnStartUp') {
+        isOnStartUp = e.gsx$value.$t;
+      }
+      if (e.gsx$attr.$t && e.gsx$attr.$t === 'notificationContent') {
+        contentLoaded = e.gsx$value.$t;
+      }
+    }
+    if (isOnStartUp === '1') {
+      $('#popupContent').html(contentLoaded);
+      $('#popup').bPopup({
+        easing: 'easeOutBack', //uses jQuery easing plugin
+        speed: 950,
+        transition: 'slideDown'
+      });
+    }
+  });
+}
+
 $(document).ready(function(){
   loadProduct();
   loadServices();
   initTimeline();
   loadImageLazily();
   loadGallery();
+});
+
+$(window).load(function(){
+  loadStartUpNotification();
 });
 
 
