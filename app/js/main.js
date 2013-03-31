@@ -230,6 +230,7 @@ function initTimeline()
       width:      '100%',
       height:     '100%',
       source: 'https://docs.google.com/spreadsheet/pub?key=0Al1j6A-YSYd3dDQzUzloZTJaS0dtMEFNNnpoeTVoS3c&output=html',
+      lang : 'vi',
       start_at_end:true,
       embed_id:   'timeline',
       css: 'js/TimelineJS/compiled/css/dark.css',
