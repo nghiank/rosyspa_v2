@@ -203,7 +203,7 @@ h3{
 	top: 73px; 
 	left: 21px;     
   background: url(../images/sub_menu.png) repeat 0% 0%;
-	width: 98px;
+	width: 130px;
 	padding: 0 0 0px;
 }
 .bg_arr{
@@ -867,4 +867,24 @@ footer p{
 }
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(255,0,0,0.4);
+}
+
+/****/
+.numberlist
+{
+  list-style-type: decimal;
+}
+.numberlist > li 
+{
+  color: #ffffff;
+}
+
+.innerList > li
+{
+  color: rgb(120, 115, 115);
+}
+
+.padding_text_level1{
+  padding-left: 30px;
+  padding-top: 10px;
 }
