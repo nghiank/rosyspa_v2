@@ -903,7 +903,7 @@ footer p{
   padding: 25px;
 }
 
-.button.b-close, .button.bClose {
+.button_popup.b-close, .button.bClose {
   border-radius: 7px 7px 7px 7px;
   box-shadow: none;
   font: bold 131% sans-serif;
@@ -913,8 +913,8 @@ footer p{
   top: -10px;
 }
 
-.button {
-  background-color: #2b91af;
+.button_popup {
+  background-color: #ed2f53;
   border-radius: 10px;
   box-shadow: 0 2px 3px rgba(0,0,0,0.3);
   color: #fff;
@@ -930,6 +930,9 @@ footer p{
   font: bold 325% 'Petrona',sans;
 }
 
-.button>span {
+.button_popup>span {
   font-size: 84%;
+}
+.normalFontSize{
+  font-size: 0.9em;
 }

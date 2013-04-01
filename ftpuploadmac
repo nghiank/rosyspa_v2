@@ -13,6 +13,7 @@ cd js
 lcd js
 mput jquery-1.7.1.js
 mkdir locale
+cd locale
 lcd locale
 mput vi.js
 lcd ..
