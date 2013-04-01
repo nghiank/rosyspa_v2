@@ -223,7 +223,7 @@ function loadServices()
 window.isTimelineLoaded = false;
 function initTimeline()
 {
-  if (!window.isTimelineLoaded && location.hash === "#!/page_promotion") {
+  if (!window.isTimelineLoaded) {
     window.isTimelineLoaded = true;
     createStoryJS({
       type:       'timeline',
